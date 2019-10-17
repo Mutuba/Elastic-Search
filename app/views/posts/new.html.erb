@@ -1,0 +1,44 @@
+
+<div class = "container">
+<h1>New Post</h1>
+
+
+<%= form_for :post,  url: posts_path do |f| %>
+  <%= f.hidden_field :authenticity_token, value: form_authenticity_token %>
+
+  <% if not @post.nil? and @post.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+      this post from being saved:</h2>
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+    <p>
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </p>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :tags %><br>
+    <%= f.text_area :tags %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to ' Back', posts_path %>
+</div>
