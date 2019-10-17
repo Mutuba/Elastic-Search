@@ -3,11 +3,11 @@
 class Post < ApplicationRecord
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
-  before_save :add_date
+  before_save :add_datetime_now!
   before_save :published!
 
 
-  def add_date
+  def add_datetime_now!
     self.published_on = DateTime.now
   end
   def published!
