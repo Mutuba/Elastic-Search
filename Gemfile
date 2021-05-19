@@ -12,7 +12,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 # Use SCSS for stylesheets
